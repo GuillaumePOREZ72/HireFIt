@@ -3,7 +3,7 @@ export const resumes: Resume[] = [
     id: "1",
     companyName: "Google",
     jobTitle: "Frontend Developer",
-    imagePath: "/images/resume-1.png",
+    imagePath: "/images/resume_01.png",
     resumePath: "/resumes/resume-1.pdf",
     feedback: {
       overallScore: 85,
@@ -33,7 +33,7 @@ export const resumes: Resume[] = [
     id: "2",
     companyName: "Microsoft",
     jobTitle: "Cloud Engineer",
-    imagePath: "/images/resume-2.png",
+    imagePath: "/images/resume_02.png",
     resumePath: "/resumes/resume-2.pdf",
     feedback: {
       overallScore: 55,
@@ -63,7 +63,7 @@ export const resumes: Resume[] = [
     id: "3",
     companyName: "Apple",
     jobTitle: "iOS Developer",
-    imagePath: "/images/resume-3.png",
+    imagePath: "/images/resume_03.png",
     resumePath: "/resumes/resume-3.pdf",
     feedback: {
       overallScore: 75,
@@ -85,6 +85,96 @@ export const resumes: Resume[] = [
       },
       skills: {
         score: 90,
+        tips: [],
+      },
+    },
+  },
+  {
+    id: "4",
+    companyName: "Microsoft",
+    jobTitle: "Fullstack Developer",
+    imagePath: "/images/resume_03.png",
+    resumePath: "/resumes/resume-3.pdf",
+    feedback: {
+      overallScore: 78,
+      ATS: {
+        score: 80,
+        tips: [],
+      },
+      toneAndStyle: {
+        score: 75,
+        tips: [],
+      },
+      content: {
+        score: 82,
+        tips: [],
+      },
+      structure: {
+        score: 70,
+        tips: [],
+      },
+      skills: {
+        score: 85,
+        tips: [],
+      },
+    },
+  },
+  {
+    id: "5",
+    companyName: "Amazon",
+    jobTitle: "Backend Engineer",
+    imagePath: "/images/resume_02.png",
+    resumePath: "/resumes/resume-2.pdf",
+    feedback: {
+      overallScore: 88,
+      ATS: {
+        score: 92,
+        tips: [],
+      },
+      toneAndStyle: {
+        score: 85,
+        tips: [],
+      },
+      content: {
+        score: 87,
+        tips: [],
+      },
+      structure: {
+        score: 86,
+        tips: [],
+      },
+      skills: {
+        score: 90,
+        tips: [],
+      },
+    },
+  },
+  {
+    id: "6",
+    companyName: "Spotify",
+    jobTitle: "UI/UX Designer",
+    imagePath: "/images/resume_01.png",
+    resumePath: "/resumes/resume-1.pdf",
+    feedback: {
+      overallScore: 81,
+      ATS: {
+        score: 78,
+        tips: [],
+      },
+      toneAndStyle: {
+        score: 84,
+        tips: [],
+      },
+      content: {
+        score: 83,
+        tips: [],
+      },
+      structure: {
+        score: 80,
+        tips: [],
+      },
+      skills: {
+        score: 82,
         tips: [],
       },
     },
