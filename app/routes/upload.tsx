@@ -34,20 +34,16 @@ const upload = () => {
       setStatusText("Uploading the file...");
       const uploadedFile = await fs.upload([file]);
       if (!uploadedFile) return setStatusText("Error: Failed to upload file");
-      console.log("Uploaded file: ", uploadedFile);
 
       setStatusText("Converting to image...");
       const imageFile = await convertPdfToImage(file);
-      console.log("Image file result: ", imageFile);
 
       if (!imageFile.file || !imageFile.file) {
-        console.error("convertPdfToImage failed:", imageFile);
         return setStatusText("Error: Failed to convert PDF to image.");
       }
 
       setStatusText("Uploading the image...");
       const uploadedImage = await fs.upload([imageFile.file]);
-      console.log("Uploaded image: ", uploadedImage);
 
       if (!uploadedImage) return setStatusText("Error: Failed to upload image");
 
@@ -62,7 +58,6 @@ const upload = () => {
       };
 
       await kv.set(`resume:${uuid}`, JSON.stringify(data));
-      console.log("Data saved to KV: ", data);
 
       setStatusText("Anazlizing...");
 
@@ -74,7 +69,6 @@ const upload = () => {
           AIResponseFormat: "json",
         })
       );
-      console.log("AI feedback raw:", feedback);
 
       if (!feedback) return setStatusText("Error: Failed to analyze resume");
 
@@ -83,16 +77,12 @@ const upload = () => {
           ? feedback.message.content
           : feedback.message.content[0].text;
 
-      console.log("Feedback text:", feedbackText);
-
       data.feedback = JSON.parse(feedbackText);
       await kv.set(`resume:${uuid}`, JSON.stringify(data));
-      console.log("Final data with feedback: ", data);
 
       setStatusText("Analysis complete, redirecting...");
       navigate(`resume/${uuid}`);
     } catch (error) {
-      console.error("Error in handleAnalyze:", error);
       setStatusText(
         `Error: ${error instanceof Error ? error.message : "Unknown error"}`
       );
