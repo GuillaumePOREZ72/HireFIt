@@ -90,6 +90,7 @@ const upload = () => {
       console.log("Final data with feedback: ", data);
 
       setStatusText("Analysis complete, redirecting...");
+      navigate(`resume/${uuid}`);
     } catch (error) {
       console.error("Error in handleAnalyze:", error);
       setStatusText(
